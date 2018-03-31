@@ -7,7 +7,7 @@
 *.o
 *.so
 
-target/
+/target
 bin/
 # Packages #
 ############
