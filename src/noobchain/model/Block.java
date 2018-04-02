@@ -14,11 +14,13 @@ import noobchain.util.NoobChainUtil;
 public class Block {
 
 	public static final Logger LOG = Logger.getLogger(Block.class);
+	
 	private String hash;
 	private String previousHash;
 	
 	private String data; // our data will be a simple message.
 	private long timeStamp; // as number of milliseconds since 1/1/1970.
+	
 	private int nonce;
 
 	private boolean mined;
