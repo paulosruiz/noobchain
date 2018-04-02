@@ -6,13 +6,17 @@ import org.apache.log4j.Logger;
 
 import noobchain.util.NoobChainUtil;
 
+/**
+ * Block of the chain
+ * @author paulo.almeida.junior
+ *
+ */
 public class Block {
 
 	public static final Logger LOG = Logger.getLogger(Block.class);
 	private String hash;
 	private String previousHash;
 	
-
 	private String data; // our data will be a simple message.
 	private long timeStamp; // as number of milliseconds since 1/1/1970.
 	private int nonce;
@@ -37,15 +41,15 @@ public class Block {
 
 	public void mineBlock(int difficulty) {
 		String target = new String(new char[difficulty]).replace('\0', '0'); // Create a string with difficulty * "0"
-		LOG.info("target:");
-		LOG.info(target);
-
+		LOG.info("target: " + target);
+		
 		while (!hash.substring(0, difficulty).equals(target)) {
 			nonce++;
-			mined = true;
 			hash = calculateHash();
 		}
-		LOG.trace("Block Mined!!! : " + hash);
+
+		mined = true;
+		LOG.info(String.format("Block Mined!!! hash: %s  after %d tentatives", hash,nonce));
 	}
 
 	public boolean isMined() {

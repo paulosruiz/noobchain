@@ -15,7 +15,7 @@ public class NoobChainUtil {
 	public static final String EncryptMode = "SHA-256";
 	public static final String EncodeMode = "UTF-8";
 
-	public static int difficulty = 5;
+	public static int difficulty = 1;
 
 	// Applies Sha256 to a string and returns the result.
 	public static String applySha256(String input) {
